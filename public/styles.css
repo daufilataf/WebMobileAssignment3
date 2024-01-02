@@ -35,18 +35,26 @@
   footer p {
     color: #ccc;
   }
-
-
-  .note {
-    width: 300px; /* Default width */
-    height: 150px; /* Default height */
+  /* .note {
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
-    margin: 16px; /* Adjust margins as needed */
+    width: 240px;
+    margin: 16px;
     float: left;
+  } */
+  .note {
+    width: calc(20% - 32px); /* 20% width for 5 items per row with margin */
+    height: 150px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    margin: 16px;
+    float: left
   }
+  
   .note h1 {
     font-size: 1.1em;
     margin-bottom: 6px;
