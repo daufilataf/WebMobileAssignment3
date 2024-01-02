@@ -1,12 +1,13 @@
 import React from "react"
 import ReactDOM from "react-dom"
-function Note(){
+
+function Note(props){
    
     return (
        <div className="note">  
-        <h1>First Flash</h1>
+        <h1>{props.answer}</h1>
         
-        <p>Sub Part</p>
+        <p>{props.question}</p>
        </div>
     );
 }
