@@ -49,6 +49,7 @@ footer p {
   color: #ccc;
 }
 .note {
+  cursor: pointer;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;

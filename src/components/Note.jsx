@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Note(props) {
+  const [isAnswerVisible, setIsAnswerVisible] = useState(false);
+
+  function handleCardClick() {
+    setIsAnswerVisible(!isAnswerVisible);
+  }
+
   function handleDelete() {
     props.onDelete(props.id);
   }
@@ -8,6 +14,7 @@ function Note(props) {
   function handleEdit() {
     props.onEdit(props.id);
   }
+
   function formatDate(isoString) {
     const date = new Date(isoString);
     const day = date.getDate().toString().padStart(2, '0');
@@ -23,15 +30,18 @@ function Note(props) {
 
   return (
     <div className="note">
-      <h1>{props.title}</h1>
-      <p>{props.content}</p>
-      <p>Status: {props.status}</p>
-      <p>Last Modified: {formatDate(props.lastModified)}</p>
-      <button onClick={handleDelete}>Delete</button>
-      <button onClick={handleEdit}>Edit</button>
+      <div onClick={handleCardClick}>
+        <h1>{props.title}</h1>
+        {isAnswerVisible && <p>{props.content}</p>}
+      </div>
+      <div className="note-footer">
+        <p>Status: {props.status}</p>
+        <p>Last Modified: {props.lastModified}</p>
+        <button onClick={handleEdit}>Edit</button>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   );
 }
-
 
 export default Note;

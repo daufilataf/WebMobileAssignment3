@@ -139,12 +139,13 @@ function App() {
       {sortedAndFilteredNotes.map(noteItem => (
         <Note
           key={noteItem.id}
-          id={noteItem.id}
-          title={noteItem.question}
-          content={noteItem.answer}
-          status={noteItem.status}
-          onDelete={deleteNote}
-          onEdit={editNoteHandler}
+    id={noteItem.id}
+    title={noteItem.question}
+    content={noteItem.answer}
+    status={noteItem.status}
+    lastModified={noteItem.lastModified}
+    onDelete={deleteNote}
+    onEdit={editNoteHandler}
         />
       ))}
       <Footer />
