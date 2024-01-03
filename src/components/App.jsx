@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
@@ -8,6 +10,7 @@ import Contact from './Contact';
 
 function App() {
   const [notes, setNotes] = useState([]);
+
   const [selectedNotes, setSelectedNotes] = useState([]);
   const [editNote, setEditNote] = useState(null);
   const [filter, setFilter] = useState("All");
@@ -27,11 +30,41 @@ function App() {
   });
 
   const fetchNotes = () => {
-    fetch("http://localhost:3001/flashcards")
-      .then(response => response.json())
-      .then(data => setNotes(data))
-      .catch(error => console.error('Error:', error));
+    fetch('http://localhost:3001/flashcards')
+      .then((response) => response.json())
+      .then((data) => {
+        const orderedData = data.sort((a, b) => a.order - b.order);
+        setNotes(orderedData);
+      })
+      .catch((error) => console.error('Error:', error));
   };
+  const onDragEnd = (result) => {
+    console.log('Drag Ended', result);
+
+    if (!result.destination) return;
+  
+    const items = Array.from(notes);
+    const [reorderedItem] = items.splice(result.source.index, 1); 
+    items.splice(result.destination.index, 0, reorderedItem); 
+    const updatedItems = items.map((item, index) => ({ ...item, order: index + 1 }));
+    setNotes(updatedItems); // Update the state with the new order
+  
+    updateOrderOnServer(updatedItems);
+  };
+  
+  const updateOrderOnServer = (updatedNotes) => {
+    updatedNotes.forEach((note) => {
+      fetch(`http://localhost:3001/flashcards/${note.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(note)
+      })
+      .then(response => response.json())
+      .catch(error => console.error('Error:', error));
+    });
+  };
+
+
 
   // Fetch flashcards when the component mounts
   useEffect(() => {
@@ -160,12 +193,11 @@ function App() {
   
     window.location.href = mailtoLink;
   };
-  
   return (
     <div>
-            <Contact />
-
+      <Contact />
       <Header />
+      {/* ... other UI components ... */}
       <button onClick={shareNotes}>Share Selected Notes</button>
       <input
         type="text"
@@ -188,19 +220,33 @@ function App() {
         <option value="StatusDesc">Status (Z-A)</option>
       </select>
       <CreateArea onAdd={addOrUpdateNote} editNote={editNote} />
-      {sortedAndFilteredNotes.map(noteItem => (
-        <Note
-          key={noteItem.id}
-    id={noteItem.id}
-    title={noteItem.question}
-    content={noteItem.answer}
-    status={noteItem.status}
-    lastModified={noteItem.lastModified}
-    onEdit={editNoteHandler}
-    onDelete={deleteNote}
-    onSelectionToggle={() => handleNoteSelection(noteItem.id)}
-        />
-      ))}
+      <DragDropContext onDragEnd={onDragEnd}>
+  <Droppable droppableId="droppable-flashcards">
+    {(provided) => (
+      <div {...provided.droppableProps} ref={provided.innerRef}>
+        {notes.map((note, index) => (
+          <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
+            {(provided) => (
+              <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                <Note
+                  id={note.id}
+                  title={note.question}
+                  content={note.answer}
+                        status={note.status}
+                        lastModified={note.lastModified}
+                        onEdit={editNoteHandler}
+                        onDelete={deleteNote}
+                        onSelectionToggle={() => handleNoteSelection(note.id)}
+                      />
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
       <Footer />
     </div>
   );

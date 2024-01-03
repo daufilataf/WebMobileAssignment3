@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 
 function Note(props) {
+  const [isFlipped, setIsFlipped] = useState(false);
   const [isAnswerVisible, setIsAnswerVisible] = useState(false);
 
+  function handleFlip() {
+    setIsFlipped(!isFlipped);
+  }
   function handleCardClick() {
     setIsAnswerVisible(!isAnswerVisible);
   }
@@ -27,30 +31,33 @@ function Note(props) {
   }
 
   const formattedDate = formatDate(props.lastModified); // Format the lastModified date
-
   return (
-    <div className="note">
-      <input
-  type="checkbox"
-  onChange={() => props.onSelectionToggle(props.id)}
-/>
-
-      <div onClick={handleCardClick}>
-        <h1>{props.title}</h1>
-        {isAnswerVisible && <p>{props.content}</p>}
-      </div>
-      <div className="note-footer">
-        <p>Status: {props.status}</p>
-        <p>Last Modified: {formattedDate}</p> {/* Display the formatted date */}
-        <button onClick={handleDelete}>
-          <i className="fas fa-trash-alt"></i>
-        </button>
-        <button onClick={handleEdit}>
-          <i className="fas fa-edit"></i>
-        </button>
+    <div onClick={handleCardClick} className={`note ${isFlipped ? 'note-flipped' : ''}`}>
+      <div className="note-inner">
+        <div className="note-front">
+          {/* Front side of the note */}
+          <input type="checkbox" onChange={() => props.onSelectionToggle(props.id)} />
+          <div>
+            <h1>{props.title}</h1>
+          </div>
+          <div className="note-footer">
+            <p>Status: {props.status}</p>
+            <p>Last Modified: {formatDate(props.lastModified)}</p>
+            <div>
+              <button onClick={handleEdit}>
+                <i className="fas fa-edit"></i>
+              </button>
+              <button onClick={handleDelete}>
+                <i className="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="note-back">
+          {isAnswerVisible && <p>{props.content}</p>}
+        </div>
       </div>
     </div>
   );
 }
-
 export default Note;

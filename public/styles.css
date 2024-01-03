@@ -4,69 +4,61 @@
   box-sizing: border-box;
 }
 
-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
 html {
   font-family: "Montserrat", sans-serif;
 }
+
 body {
   background: #eee;
   padding: 0 16px;
+  margin-bottom: 2.5rem; /* Space for footer */
 }
 
-header {
+header, footer {
   background-color: #f5ba13;
-  margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
-header h1 {
+header h1, footer p {
   color: #fff;
-  font-family: "McLaren", cursive;
-  font-weight: 200;
 }
 
-footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
 
-footer p {
-  color: #ccc;
-}
+
 .note {
-  cursor: pointer;
+  flex: 0 0 calc(33.333% - 16px); /* Adjust for 3 items per row, accounting for the gap */
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
-  width: 240px;
-  margin: 16px;
-  float: left;
+  margin: 10px;
+  perspective: 1000px; /* Required for 3D effects */
+
+  /* Ensure the height of notes are equal if needed */
 }
+
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
+
 .note p {
   font-size: 1.1em;
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.note-footer {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-start; /* Align items to the start of the container */
+  gap: 5px; /* Space between elements */
+}
+
+.note-footer button {
+  margin-top: 10px;
 }
 
 .note button {
@@ -80,6 +72,9 @@ footer p {
   cursor: pointer;
   outline: none;
 }
+
+
+
 
 form.create-note {
   position: relative;

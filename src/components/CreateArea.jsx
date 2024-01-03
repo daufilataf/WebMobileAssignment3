@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 function CreateArea(props) {
   const [isExpanded, setExpanded] = useState(false);
