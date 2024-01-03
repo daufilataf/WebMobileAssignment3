@@ -173,8 +173,9 @@ function App() {
     content={noteItem.answer}
     status={noteItem.status}
     lastModified={noteItem.lastModified}
-    onDelete={deleteNote}
     onEdit={editNoteHandler}
+    onDelete={deleteNote}
+   
         />
       ))}
       <Footer />

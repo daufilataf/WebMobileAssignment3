@@ -17,16 +17,16 @@ function Note(props) {
 
   function formatDate(isoString) {
     const date = new Date(isoString);
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
+    const day = date.getDate().toString().padStart(2, "0");
+    const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Months are 0-indexed
     const year = date.getFullYear();
-    const hours = date.getHours();
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    const formattedHours = hours % 12 || 12; // Convert 24h to 12h format
+    const hours = date.getHours().toString().padStart(2, "0");
+    const minutes = date.getMinutes().toString().padStart(2, "0");
 
-    return `${day}.${month}.${year} ${formattedHours}:${minutes} ${ampm}`;
+    return `${day}:${month}:${year} ${hours}:${minutes}`;
   }
+
+  const formattedDate = formatDate(props.lastModified); // Format the lastModified date
 
   return (
     <div className="note">
@@ -36,12 +36,12 @@ function Note(props) {
       </div>
       <div className="note-footer">
         <p>Status: {props.status}</p>
-        <p>Last Modified: {props.lastModified}</p>
-        <button onClick={handleEdit}>
-          <i className="fas fa-edit"></i> 
-        </button>
+        <p>Last Modified: {formattedDate}</p> {/* Display the formatted date */}
         <button onClick={handleDelete}>
-          <i className="fas fa-trash-alt"></i> 
+          <i className="fas fa-trash-alt"></i>
+        </button>
+        <button onClick={handleEdit}>
+          <i className="fas fa-edit"></i>
         </button>
       </div>
     </div>
@@ -49,4 +49,3 @@ function Note(props) {
 }
 
 export default Note;
-
