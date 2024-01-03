@@ -9,6 +9,8 @@ function Note(props){
         <h1>{props.answer}</h1>
         
         <p>{props.question}</p>
+        <button>DELETE</button>
+
        </div>
        </div>
     );
