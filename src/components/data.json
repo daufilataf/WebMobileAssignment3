@@ -1,104 +1,79 @@
 {
     "flashcards": [
-    {
-      id: 1,
-      ans: "JavaScript",
-      question: "Which programming language is commonly used for web development?"
-    },
-    {
-      id: 2,
-      ans: "Python",
-      question: "Which language is known for its readability and simplicity?"
-    },
-    {
-      id: 3,
-      ans: "Java",
-      question: "Which programming language is used to develop Android applications?"
-    },
-    {
-      id: 4,
-      ans: "Git",
-      question: "What is the name of the version control system designed by Linus Torvalds?"
-    },
-    {
-      id: 5,
-      ans: "HTML",
-      question: "What markup language is used for structuring web pages?"
-    },
-    {
-      id: 6,
-      ans: "SQL",
-      question: "What language is used for managing and manipulating databases?"
-    },
-    {
-      id: 7,
-      ans: "Ruby",
-      question: "Which programming language is often associated with the Rails framework?"
-    },
-    {
-      id: 8,
-      ans: "C++",
-      question: "What programming language is an extension of the C language and is commonly used in game development?"
-    },
-    {
-      id: 9,
-      ans: "API",
-      question: "What does API stand for in programming?"
-    },
-    {
-      id: 10,
-      ans: "CSS",
-      question: "Which language is used for styling web pages?"
-    },
-    {
-      id: 11,
-      ans: "JavaScript",
-      question: "Which language allows dynamic content to be added to HTML and interacts with the Document Object Model (DOM)?"
-    },
-    {
-      id: 12,
-      ans: "PHP",
-      question: "What programming language is commonly used for server-side scripting?"
-    },
-    {
-      id: 13,
-      ans: "Assembly",
-      question: "What is the low-level programming language used to write computer programs?"
-    },
-    {
-      id: 14,
-      ans: "JSON",
-      question: "What format is commonly used to transmit data between a server and web application?"
-    },
-    {
-      id: 15,
-      ans: "Swift",
-      question: "What programming language is used for developing iOS applications?"
-    },
-    {
-      id: 16,
-      ans: "Node.js",
-      question: "Which JavaScript runtime is commonly used for building server-side applications?"
-    },
-    {
-      id: 17,
-      ans: "Bootstrap",
-      question: "What front-end framework is developed by Twitter to build responsive and mobile-first websites?"
-    },
-    {
-      id: 18,
-      ans: "API",
-      question: "What is the abbreviation for Application Programming Interface?"
-    },
-    {
-      id: 19,
-      ans: "MySQL",
-      question: "Which open-source relational database management system is commonly used in web development?"
-    },
-    {
-      id: 20,
-      ans: "Ruby on Rails",
-      question: "What web application framework is written in Ruby programming language?"
-    },
-  ];
+      {
+        "id": 1,
+        "question": "What is React?",
+        "answer": "A JavaScript library for building user interfaces"
+      },
+      {
+        "id": 2,
+        "question": "What is a closure in JavaScript?",
+        "answer": "A closure is a function that has access to its own scope, the outer function’s scope, and the global scope."
+      },
+      {
+        "id": 3,
+        "question": "What is the difference between '==' and '===' in JavaScript?",
+        "answer": "'==' checks for equality with type coercion, while '===' checks for equality without type coercion (strict equality)."
+      },
+      {
+        "id": 4,
+        "question": "What is the purpose of CSS?",
+        "answer": "CSS (Cascading Style Sheets) is used to style and layout web pages."
+      },
+      {
+        "id": 5,
+        "question": "What is a Promise in JavaScript?",
+        "answer": "A Promise is an object representing the eventual completion or failure of an asynchronous operation."
+      },
+      {
+        "id": 6,
+        "question": "What is Git?",
+        "answer": "Git is a distributed version-control system for tracking changes in source code during software development."
+      },
+      {
+        "id": 7,
+        "question": "What is Agile software development?",
+        "answer": "Agile software development refers to software development methodologies centered round the idea of iterative development, where requirements and solutions evolve through collaboration."
+      },
+      {
+        "id": 8,
+        "question": "What is a RESTful API?",
+        "answer": "A RESTful API is an application program interface that uses HTTP requests to GET, PUT, POST and DELETE data."
+      },
+      {
+        "id": 9,
+        "question": "What is Object-Oriented Programming?",
+        "answer": "Object-Oriented Programming is a programming paradigm based on the concept of 'objects', which can contain data and code: data in the form of fields, and code, in the form of procedures."
+      },
+      {
+        "id": 10,
+        "question": "What is Node.js?",
+        "answer": "Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser."
+      },
+      {
+        "id": 11,
+        "question": "What is the Document Object Model (DOM) in web development?",
+        "answer": "The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content."
+      },
+      {
+        "id": 12,
+        "question": "What is Python known for?",
+        "answer": "Python is known for its simplicity and readability, often used for web development, data analysis, AI, and scientific computing."
+      },
+      {
+        "id": 13,
+        "question": "What is SQL used for?",
+        "answer": "SQL (Structured Query Language) is used for managing and manipulating relational databases."
+      },
+      {
+        "id": 14,
+        "question": "What is the significance of HTTP and HTTPS?",
+        "answer": "HTTP is a protocol used for transferring web documents. HTTPS is its secure version, encrypting data for safe transfer."
+      },
+      {
+        "id": 15,
+        "question": "What is a framework in programming?",
+        "answer": "A framework is a platform for developing software applications. It provides a foundation on which software developers can build programs for a specific platform."
+      }
+    ]
 }

@@ -1,0 +1,72 @@
+{
+  "flashcards": [
+    {
+      "question": "What is the difference between '==' and '===' in JavaScript?",
+      "answer": "'==' checks for equality with type coercion, while '===' checks for equality without type coercion (strict equality).",
+      "lastModified": "2024-01-03T14:37:55.864Z",
+      "id": 3
+    },
+    {
+      "question": "ew",
+      "answer": "ew",
+      "lastModified": "2024-01-03T14:36:40.460Z",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "question": "What is a Promise in JavaScript?",
+      "answer": "A Promise is an object representing the eventual completion or failure of an asynchronous operation."
+    },
+    {
+      "id": 6,
+      "question": "What is Git?",
+      "answer": "Git is a distributed version-control system for tracking changes in source code during software development."
+    },
+    {
+      "id": 7,
+      "question": "What is Agile software development?",
+      "answer": "Agile software development refers to software development methodologies centered round the idea of iterative development, where requirements and solutions evolve through collaboration."
+    },
+    {
+      "id": 8,
+      "question": "What is a RESTful API?",
+      "answer": "A RESTful API is an application program interface that uses HTTP requests to GET, PUT, POST and DELETE data."
+    },
+    {
+      "id": 9,
+      "question": "What is Object-Oriented Programming?",
+      "answer": "Object-Oriented Programming is a programming paradigm based on the concept of 'objects', which can contain data and code: data in the form of fields, and code, in the form of procedures."
+    },
+    {
+      "id": 10,
+      "question": "What is Node.js?",
+      "answer": "Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser."
+    },
+    {
+      "id": 11,
+      "question": "What is the Document Object Model (DOM) in web development?",
+      "answer": "The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content."
+    },
+    {
+      "id": 12,
+      "question": "What is Python known for?",
+      "answer": "Python is known for its simplicity and readability, often used for web development, data analysis, AI, and scientific computing."
+    },
+    {
+      "id": 13,
+      "question": "What is SQL used for?",
+      "answer": "SQL (Structured Query Language) is used for managing and manipulating relational databases."
+    },
+    {
+      "id": 14,
+      "question": "What is the significance of HTTP and HTTPS?",
+      "answer": "HTTP is a protocol used for transferring web documents. HTTPS is its secure version, encrypting data for safe transfer."
+    },
+    {
+      "question": "ok",
+      "answer": "ten",
+      "lastModified": "2024-01-03T14:45:29.953Z",
+      "id": 18
+    }
+  ]
+}
