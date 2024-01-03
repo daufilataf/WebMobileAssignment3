@@ -42,7 +42,6 @@ function CreateArea(props) {
   function expand() {
     setExpanded(true);
   }
-
   return (
     <div>
       <form className="create-note">
@@ -82,4 +81,3 @@ function CreateArea(props) {
 }
 
 export default CreateArea;
-

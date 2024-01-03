@@ -7,8 +7,20 @@ import CreateArea from "./CreateArea";
 function App() {
   const [notes, setNotes] = useState([]);
   const [editNote, setEditNote] = useState(null);
+  
+  // Search Part
+  const [searchTerm, setSearchTerm] = useState(""); 
 
-  // Function to fetch flashcards from the server
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredNotes = searchTerm
+    ? notes.filter(note =>
+        note.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        note.answer.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : notes;
   const fetchNotes = () => {
     fetch("http://localhost:3001/flashcards")
       .then(response => response.json())
@@ -74,19 +86,24 @@ function App() {
   return (
     <div>
       <Header />
+      <input
+        type="text"
+        placeholder="Search for notes..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+      />
       <CreateArea onAdd={addOrUpdateNote} editNote={editNote} />
-      {notes.map(noteItem => (
-  <Note
-    key={noteItem.id}
-    id={noteItem.id}
-    title={noteItem.question}
-    content={noteItem.answer}
-    status={noteItem.status}
-    lastModified={noteItem.lastModified} // Pass the lastModified prop
-    onDelete={deleteNote}
-    onEdit={editNoteHandler}
-  />
-))}
+      {filteredNotes.map(noteItem => (
+        <Note
+          key={noteItem.id}
+          id={noteItem.id}
+          title={noteItem.question}
+          content={noteItem.answer}
+          status={noteItem.status}
+          onDelete={deleteNote}
+          onEdit={editNoteHandler}
+        />
+      ))}
       <Footer />
     </div>
   );
