@@ -154,13 +154,10 @@ function App() {
     const notesToShare = notes.filter(note => selectedNotes.includes(note.id));
     const notesJson = JSON.stringify(notesToShare, null, 2); // Beautify the JSON string
   
-    // Encode the JSON string to make it safe for URL usage
     const emailBody = encodeURIComponent(notesJson);
   
-    // Construct the mailto link with subject and body
     const mailtoLink = `mailto:?subject=Shared Notes&body=${emailBody}`;
   
-    // Open the user's default email client
     window.location.href = mailtoLink;
   };
   
