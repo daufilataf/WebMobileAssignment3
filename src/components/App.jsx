@@ -89,8 +89,29 @@ function App() {
     setEditNote(noteToEdit);
   }
 
+  const handleSortChange = (event) => {
+    setSortOption(event.target.value);
+  };
 
-  
+  const sortedAndFilteredNotes = filteredNotes.slice().sort((a, b) => {
+    switch (sortOption) {
+      case "LastModifiedDesc":
+        return new Date(b.lastModified) - new Date(a.lastModified);
+      case "LastModifiedAsc":
+        return new Date(a.lastModified) - new Date(b.lastModified);
+      case "QuestionAsc":
+        return a.question.localeCompare(b.question);
+      case "QuestionDesc":
+        return b.question.localeCompare(a.question);
+      case "StatusAsc":
+        return a.status.localeCompare(b.status);
+      case "StatusDesc":
+        return b.status.localeCompare(a.status);
+      default:
+        return 0;
+    }
+  });
+
   return (
     <div>
       <Header />
@@ -106,8 +127,16 @@ function App() {
         <option value="Want to Learn">Want to Learn</option>
         <option value="Noted">Noted</option>
       </select>
+      <select value={sortOption} onChange={handleSortChange}>
+        <option value="LastModifiedDesc">Last Modified (Newest)</option>
+        <option value="LastModifiedAsc">Last Modified (Oldest)</option>
+        <option value="QuestionAsc">Question (A-Z)</option>
+        <option value="QuestionDesc">Question (Z-A)</option>
+        <option value="StatusAsc">Status (A-Z)</option>
+        <option value="StatusDesc">Status (Z-A)</option>
+      </select>
       <CreateArea onAdd={addOrUpdateNote} editNote={editNote} />
-      {filteredNotes.map(noteItem => (
+      {sortedAndFilteredNotes.map(noteItem => (
         <Note
           key={noteItem.id}
           id={noteItem.id}
