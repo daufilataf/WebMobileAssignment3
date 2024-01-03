@@ -6,11 +6,22 @@ import CreateArea from "./CreateArea";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [editNote, setEditNote] = useState(null);
 
   function addNote(newNote) {
-    setNotes(prevNotes => {
-      return [...prevNotes, newNote];
-    });
+    if (editNote) {
+      setNotes(prevNotes =>
+        prevNotes.map((note, index) =>
+          index === editNote.id ? { title: newNote.title, content: newNote.content } : note
+        )
+      );
+      setEditNote(null); // Reset edit note
+    } else {
+      // Add new note logic
+      setNotes(prevNotes => {
+        return [newNote, ...prevNotes];
+      });
+    }
   }
 
   function deleteNote(id) {
@@ -21,10 +32,18 @@ function App() {
     });
   }
 
+  function editNoteHandler(id) {
+    const noteToEdit = notes[id];
+    setEditNote({
+      ...noteToEdit,
+      id: id
+    });
+  }
+
   return (
     <div>
       <Header />
-      <CreateArea onAdd={addNote} />
+      <CreateArea onAdd={addNote} editNote={editNote} />
       {notes.map((noteItem, index) => {
         return (
           <Note
@@ -33,6 +52,7 @@ function App() {
             title={noteItem.title}
             content={noteItem.content}
             onDelete={deleteNote}
+            onEdit={editNoteHandler}
           />
         );
       })}

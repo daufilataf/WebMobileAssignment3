@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
 
 function CreateArea(props) {
   const [isExpanded, setExpanded] = useState(false);
-
   const [note, setNote] = useState({
     title: "",
     content: ""
   });
 
+  // When editNote changes, update the local note state
+  useEffect(() => {
+    if (props.editNote) {
+      setNote({
+        title: props.editNote.title,
+        content: props.editNote.content
+      });
+      setExpanded(true);
+    }
+  }, [props.editNote]);
+
   function handleChange(event) {
     const { name, value } = event.target;
-
     setNote(prevNote => {
       return {
         ...prevNote,
@@ -28,6 +37,7 @@ function CreateArea(props) {
       title: "",
       content: ""
     });
+    setExpanded(false); // Collapse the form after submission
     event.preventDefault();
   }
 
@@ -38,23 +48,24 @@ function CreateArea(props) {
   return (
     <div>
       <form className="create-note">
-        {isExpanded && (
-          <input
+        
+          <input onClick={expand}
             name="title"
             onChange={handleChange}
             value={note.title}
             placeholder="Title"
           />
-        )}
-
+      
+        {isExpanded && (
         <textarea
           name="content"
-          onClick={expand}
+          
           onChange={handleChange}
           value={note.content}
           placeholder="Take a note..."
           rows={isExpanded ? 3 : 1}
         />
+        )}
         <Zoom in={isExpanded}>
           <Fab onClick={submitNote}>
             <AddIcon />
