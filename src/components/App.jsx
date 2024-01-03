@@ -3,59 +3,49 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import programmingQuestions from "./data.json"; 
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(programmingQuestions); 
   const [editNote, setEditNote] = useState(null);
 
-  function addNote(newNote) {
+  function addOrUpdateNote(newNote) {
     if (editNote) {
       setNotes(prevNotes =>
-        prevNotes.map((note, index) =>
-          index === editNote.id ? { title: newNote.title, content: newNote.content } : note
+        prevNotes.map(note =>
+          note.id === editNote.id ? { ...newNote, id: editNote.id } : note
         )
       );
       setEditNote(null); // Reset edit note
     } else {
-      // Add new note logic
-      setNotes(prevNotes => {
-        return [newNote, ...prevNotes];
-      });
+      const newId = Math.max(...notes.map(note => note.id)) + 1; 
+      setNotes(prevNotes => [{ ...newNote, id: newId }, ...prevNotes]);
     }
   }
 
   function deleteNote(id) {
-    setNotes(prevNotes => {
-      return prevNotes.filter((noteItem, index) => {
-        return index !== id;
-      });
-    });
+    setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
   }
 
   function editNoteHandler(id) {
-    const noteToEdit = notes[id];
-    setEditNote({
-      ...noteToEdit,
-      id: id
-    });
+    const noteToEdit = notes.find(note => note.id === id);
+    setEditNote(noteToEdit);
   }
 
   return (
     <div>
       <Header />
-      <CreateArea onAdd={addNote} editNote={editNote} />
-      {notes.map((noteItem, index) => {
-        return (
-          <Note
-            key={index}
-            id={index}
-            title={noteItem.title}
-            content={noteItem.content}
-            onDelete={deleteNote}
-            onEdit={editNoteHandler}
-          />
-        );
-      })}
+      <CreateArea onAdd={addOrUpdateNote} editNote={editNote} />
+      {notes.map(noteItem => (
+        <Note
+          key={noteItem.id}
+          id={noteItem.id}
+          title={noteItem.question}
+          content={noteItem.ans}
+          onDelete={deleteNote}
+          onEdit={editNoteHandler}
+        />
+      ))}
       <Footer />
     </div>
   );

@@ -3,11 +3,11 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 
 function Note(props) {
-  function handleClick() {
+  function handleDelete() {
     props.onDelete(props.id);
   }
 
-  function handleEditClick() {
+  function handleEdit() {
     props.onEdit(props.id);
   }
 
@@ -15,10 +15,10 @@ function Note(props) {
     <div className="note">
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button onClick={handleClick}>
+      <button onClick={handleDelete}>
         <DeleteIcon />
       </button>
-      <button onClick={handleEditClick}>
+      <button onClick={handleEdit}>
         <EditIcon />
       </button>
     </div>
