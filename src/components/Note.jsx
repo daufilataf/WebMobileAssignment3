@@ -25,6 +25,7 @@ function Note(props) {
     <div className="note">
       <h1>{props.title}</h1>
       <p>{props.content}</p>
+      <p>Status: {props.status}</p>
       <p>Last Modified: {formatDate(props.lastModified)}</p>
       <button onClick={handleDelete}>Delete</button>
       <button onClick={handleEdit}>Edit</button>

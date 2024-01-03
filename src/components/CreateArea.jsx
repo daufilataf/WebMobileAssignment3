@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 function CreateArea(props) {
   const [isExpanded, setExpanded] = useState(false);
+  const [status, setStatus] = useState("Noted");
+
   const [note, setNote] = useState({
     title: "",
     content: ""
@@ -28,7 +30,7 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    props.onAdd(note);
+    props.onAdd(note, status);
     setNote({
       title: "",
       content: ""
@@ -59,7 +61,16 @@ function CreateArea(props) {
             placeholder="Take a note..."
             rows={isExpanded ? 3 : 1}
           />
+
+          
         )}
+        {isExpanded && (
+        <select value={status} onChange={(e) => setStatus(e.target.value)}>
+          <option value="Learned">Learned</option>
+          <option value="Want to Learn">Want to Learn</option>
+          <option value="Noted">Noted</option>
+        </select>
+         )}
         {isExpanded && (
           <button onClick={submitNote}>
             Add
@@ -71,3 +82,4 @@ function CreateArea(props) {
 }
 
 export default CreateArea;
+

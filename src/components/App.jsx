@@ -21,11 +21,12 @@ function App() {
     fetchNotes();
   }, []);
 
-  function addOrUpdateNote(newNote) {
+  function addOrUpdateNote(newNote, status = "Noted") {
     const noteData = {
       question: newNote.title,
       answer: newNote.content,
-      lastModified: new Date().toISOString()
+      lastModified: new Date().toISOString(),
+      status: status 
     };
 
     if (editNote) {
@@ -80,6 +81,7 @@ function App() {
     id={noteItem.id}
     title={noteItem.question}
     content={noteItem.answer}
+    status={noteItem.status}
     lastModified={noteItem.lastModified} // Pass the lastModified prop
     onDelete={deleteNote}
     onEdit={editNoteHandler}
