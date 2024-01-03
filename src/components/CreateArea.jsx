@@ -30,6 +30,10 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
+    if (!note.title || !note.content) {
+      alert("Title and content cannot be empty.");
+      return; // Do not add the note
+    }
     props.onAdd(note, status);
     setNote({
       title: "",
@@ -72,7 +76,7 @@ function CreateArea(props) {
          )}
         {isExpanded && (
           <button onClick={submitNote}>
-            Add
+             <i className="fas fa-plus"></i> 
           </button>
         )}
       </form>

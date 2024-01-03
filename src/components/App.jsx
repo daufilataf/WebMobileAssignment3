@@ -96,24 +96,49 @@ function App() {
   };
 
   const sortedAndFilteredNotes = filteredNotes.slice().sort((a, b) => {
+    function compareLastModifiedDesc() {
+      return new Date(b.lastModified) - new Date(a.lastModified);
+    }
+  
+    function compareLastModifiedAsc() {
+      return new Date(a.lastModified) - new Date(b.lastModified);
+    }
+  
+    function compareQuestionAsc() {
+      return (a.question || "").localeCompare(b.question || "");
+    }
+  
+    function compareQuestionDesc() {
+      return (b.question || "").localeCompare(a.question || "");
+    }
+  
+    function compareStatusAsc() {
+      return (a.status || "").localeCompare(b.status || "");
+    }
+  
+    function compareStatusDesc() {
+      return (b.status || "").localeCompare(a.status || "");
+    }
+  
     switch (sortOption) {
       case "LastModifiedDesc":
-        return new Date(b.lastModified) - new Date(a.lastModified);
+        return compareLastModifiedDesc();
       case "LastModifiedAsc":
-        return new Date(a.lastModified) - new Date(b.lastModified);
+        return compareLastModifiedAsc();
       case "QuestionAsc":
-        return a.question.localeCompare(b.question);
+        return compareQuestionAsc();
       case "QuestionDesc":
-        return b.question.localeCompare(a.question);
+        return compareQuestionDesc();
       case "StatusAsc":
-        return a.status.localeCompare(b.status);
+        return compareStatusAsc();
       case "StatusDesc":
-        return b.status.localeCompare(a.status);
+        return compareStatusDesc();
       default:
         return 0;
     }
   });
-
+  
+  
   return (
     <div>
             <Contact />

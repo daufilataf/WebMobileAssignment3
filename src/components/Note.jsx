@@ -37,11 +37,16 @@ function Note(props) {
       <div className="note-footer">
         <p>Status: {props.status}</p>
         <p>Last Modified: {props.lastModified}</p>
-        <button onClick={handleEdit}>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleEdit}>
+          <i className="fas fa-edit"></i> 
+        </button>
+        <button onClick={handleDelete}>
+          <i className="fas fa-trash-alt"></i> 
+        </button>
       </div>
     </div>
   );
 }
 
 export default Note;
+
