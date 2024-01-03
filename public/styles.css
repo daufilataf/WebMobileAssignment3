@@ -179,3 +179,23 @@ form.create-note button {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.share-notes-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 15px 32px; /* Padding around the text */
+  text-align: center; /* Center the text inside the button */
+  text-decoration: none; /* Remove underline from text */
+  display: inline-block; /* Allow setting width and height */
+  font-size: 16px; /* Text size */
+  margin: 4px 2px; /* Margin around the button */
+  cursor: pointer; /* Change mouse cursor to pointer */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  transition-duration: 0.4s; /* Animation duration */
+}
+
+.share-notes-button:hover {
+  background-color: #45a049; /* Darker shade of green */
+  color: white;
+}

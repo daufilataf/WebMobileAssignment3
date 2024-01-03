@@ -173,11 +173,11 @@ function App() {
   });
   const handleNoteSelection = (id) => {
     setSelectedNotes(prevSelected => {
-      const newSelected = prevSelected.includes(id) 
-                          ? prevSelected.filter(noteId => noteId !== id) 
-                          : [...prevSelected, id];
-      console.log("Selected Notes: ", newSelected);
-      return newSelected;
+      if (prevSelected.includes(id)) {
+        return prevSelected.filter(noteId => noteId !== id);
+      } else {
+        return [...prevSelected, id];
+      }
     });
   };
   
@@ -195,9 +195,7 @@ function App() {
   };
   return (
     <div>
-      <Contact />
       <Header />
-      <button onClick={shareNotes}>Share Selected Notes</button>
       <div className="search-filter-container">
 
       <input
@@ -249,6 +247,13 @@ function App() {
           )}
         </Droppable>
       </DragDropContext>
+      {selectedNotes.length > 0 && (
+      <button className="share-notes-button" onClick={shareNotes}>
+        Share Selected Notes
+      </button>
+    )}
+      <Contact />
+
       <Footer />
     </div>
   );

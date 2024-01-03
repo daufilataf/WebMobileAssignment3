@@ -32,17 +32,19 @@ function Note(props) {
 
   const formattedDate = formatDate(props.lastModified); // Format the lastModified date
   return (
-    <div onClick={handleCardClick} className={`note ${isFlipped ? 'note-flipped' : ''}`}>
+    <div  className={`note ${isFlipped ? 'note-flipped' : ''}`}>
       <div className="note-inner">
         <div className="note-front">
           {/* Front side of the note */}
           <input type="checkbox" onChange={() => props.onSelectionToggle(props.id)} />
+          <div onClick={handleCardClick}>
           <div>
             <h1>{props.title}</h1>
           </div>
           <div className="note-footer">
             <p>Status: {props.status}</p>
             <p>Last Modified: {formatDate(props.lastModified)}</p>
+            </div>
             <div>
               <button onClick={handleEdit}>
                 <i className="fas fa-edit"></i>
