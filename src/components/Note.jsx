@@ -30,6 +30,11 @@ function Note(props) {
 
   return (
     <div className="note">
+      <input
+  type="checkbox"
+  onChange={() => props.onSelectionToggle(props.id)}
+/>
+
       <div onClick={handleCardClick}>
         <h1>{props.title}</h1>
         {isAnswerVisible && <p>{props.content}</p>}

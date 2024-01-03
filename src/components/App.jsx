@@ -8,6 +8,7 @@ import Contact from './Contact';
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [selectedNotes, setSelectedNotes] = useState([]);
   const [editNote, setEditNote] = useState(null);
   const [filter, setFilter] = useState("All");
   const [sortOption, setSortOption] = useState("LastModifiedDesc");
@@ -137,13 +138,38 @@ function App() {
         return 0;
     }
   });
+  const handleNoteSelection = (id) => {
+    setSelectedNotes(prevSelected => {
+      const newSelected = prevSelected.includes(id) 
+                          ? prevSelected.filter(noteId => noteId !== id) 
+                          : [...prevSelected, id];
+      console.log("Selected Notes: ", newSelected);
+      return newSelected;
+    });
+  };
   
+
+
+  const shareNotes = () => {
+    const notesToShare = notes.filter(note => selectedNotes.includes(note.id));
+    const notesJson = JSON.stringify(notesToShare, null, 2); // Beautify the JSON string
+  
+    // Encode the JSON string to make it safe for URL usage
+    const emailBody = encodeURIComponent(notesJson);
+  
+    // Construct the mailto link with subject and body
+    const mailtoLink = `mailto:?subject=Shared Notes&body=${emailBody}`;
+  
+    // Open the user's default email client
+    window.location.href = mailtoLink;
+  };
   
   return (
     <div>
             <Contact />
 
       <Header />
+      <button onClick={shareNotes}>Share Selected Notes</button>
       <input
         type="text"
         placeholder="Search for notes..."
@@ -175,7 +201,7 @@ function App() {
     lastModified={noteItem.lastModified}
     onEdit={editNoteHandler}
     onDelete={deleteNote}
-   
+    onSelectionToggle={() => handleNoteSelection(noteItem.id)}
         />
       ))}
       <Footer />
