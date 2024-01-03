@@ -26,63 +26,191 @@
       "lastModified": "2024-01-03T16:47:31.951Z",
       "status": "Want to Learn",
       "id": 5,
-      "order": 6
-    },
-    {
-      "question": "EWEW",
-      "answer": "EWEWE",
-      "lastModified": "2024-01-03T20:09:52.242Z",
-      "status": "Noted",
-      "id": 19,
-      "order": 2
-    },
-    {
-      "question": "EWEW",
-      "answer": "EWEW",
-      "lastModified": "2024-01-03T14:54:16.991Z",
-      "status": "Want to Learn",
-      "id": 20,
       "order": 3
     },
     {
-      "question": "slaam",
-      "answer": "hell",
-      "lastModified": "2024-01-03T15:00:31.938Z",
+      "question": "What is a closure in JavaScript?",
+      "answer": "A closure is a function combined with its lexical environment, allowing it to access variables outside of its scope.",
+      "lastModified": "2024-01-04T10:20:30.123Z",
       "status": "Noted",
-      "id": 21,
-      "order": 5
-    },
-    {
-      "question": "Salam",
-      "answer": "ok",
-      "lastModified": "2024-01-03T20:34:20.696Z",
-      "status": "Noted",
-      "id": 22,
-      "order": 7
-    },
-    {
-      "question": "ewe",
-      "answer": "wewewe",
-      "lastModified": "2024-01-03T20:56:22.703Z",
-      "status": "Noted",
-      "id": 23,
+      "id": 6,
       "order": 1
     },
     {
-      "question": "Java",
-      "answer": "Write once",
-      "lastModified": "2024-01-03T16:56:47.015Z",
+      "question": "What is the difference between '==' and '===' in JavaScript?",
+      "answer": "'==' compares values after type coercion, while '===' compares both value and type.",
+      "lastModified": "2024-01-05T11:15:45.234Z",
+      "status": "Learned",
+      "id": 7,
+      "order": 2
+    },
+    {
+      "question": "Explain event delegation in JavaScript.",
+      "answer": "Event delegation is a technique of handling events by adding a single event listener to a parent element rather than multiple listeners to individual child elements.",
+      "lastModified": "2024-01-06T09:30:55.345Z",
+      "status": "Want to Learn",
+      "id": 8,
+      "order": 4
+    },
+    {
+      "question": "What is the purpose of arrow functions in JavaScript?",
+      "answer": "Arrow functions provide a concise syntax and lexically bind the 'this' value.",
+      "lastModified": "2024-01-07T14:40:05.456Z",
       "status": "Noted",
-      "id": 28,
+      "id": 9,
+      "order": 5
+    },
+    {
+      "question": "Explain the concept of hoisting in JavaScript.",
+      "answer": "Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.",
+      "lastModified": "2024-01-08T08:30:10.567Z",
+      "status": "Learned",
+      "id": 10,
+      "order": 6
+    },
+    {
+      "question": "What are JavaScript data types?",
+      "answer": "JavaScript data types include undefined, null, boolean, string, symbol, number, and object.",
+      "lastModified": "2024-01-09T12:47:20.678Z",
+      "status": "Want to Learn",
+      "id": 11,
+      "order": 7
+    },
+    {
+      "question": "What is the use of the 'this' keyword in JavaScript?",
+      "answer": "'This' refers to the object from which a function is called.",
+      "lastModified": "2024-01-10T15:22:35.789Z",
+      "status": "Noted",
+      "id": 12,
       "order": 8
     },
     {
-      "question": "dee",
-      "answer": "fefefefefe",
-      "lastModified": "2024-01-03T19:52:52.195Z",
+      "question": "What is event bubbling in JavaScript?",
+      "answer": "Event bubbling is a method of event propagation in the HTML DOM where events bubble up from the target element to the document root.",
+      "lastModified": "2024-01-11T17:55:40.890Z",
+      "status": "Learned",
+      "id": 13,
+      "order": 9
+    },
+    {
+      "question": "What is the Document Object Model (DOM) in web development?",
+      "answer": "The DOM is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content.",
+      "lastModified": "2024-01-12T19:05:50.901Z",
       "status": "Want to Learn",
-      "id": 29,
-      "order": 4
+      "id": 14,
+      "order": 10
+    },
+    {
+      "question": "How do you create a function in JavaScript?",
+      "answer": "A function can be created using a function declaration or a function expression.",
+      "lastModified": "2024-01-13T20:15:10.012Z",
+      "status": "Noted",
+      "id": 15,
+      "order": 11
+    },
+    {
+      "question": "What is the purpose of callbacks in JavaScript?",
+      "answer": "Callbacks are functions passed into another function as an argument to be executed later.",
+      "lastModified": "2024-01-14T21:25:20.123Z",
+      "status": "Learned",
+      "id": 16,
+      "order": 12
+    },
+    {
+      "question": "What is the difference between 'let' and 'const' in JavaScript?",
+      "answer": "'let' allows reassigning the variable, while 'const' does not.",
+      "lastModified": "2024-01-15T09:30:31.234Z",
+      "status": "Noted",
+      "id": 17,
+      "order": 13
+    },
+    {
+      "question": "What is an IIFE in JavaScript?",
+      "answer": "An Immediately Invoked Function Expression is a function that runs as soon as it is defined.",
+      "lastModified": "2024-01-16T10:40:42.345Z",
+      "status": "Learned",
+      "id": 18,
+      "order": 14
+    },
+    {
+      "question": "How do you add an element to the beginning of an array in JavaScript?",
+      "answer": "Use the 'unshift' method to add an element to the beginning of an array.",
+      "lastModified": "2024-01-17T11:50:53.456Z",
+      "status": "Want to Learn",
+      "id": 19,
+      "order": 15
+    },
+    {
+      "question": "What is JSON and how is it used in JavaScript?",
+      "answer": "JSON (JavaScript Object Notation) is a lightweight data interchange format. It's easy for humans to read and write and for machines to parse and generate.",
+      "lastModified": "2024-01-18T12:01:04.567Z",
+      "status": "Noted",
+      "id": 20,
+      "order": 16
+    },
+    {
+      "question": "Explain the 'map' method in JavaScript.",
+      "answer": "The 'map' method creates a new array populated with the results of calling a provided function on every element in the calling array.",
+      "lastModified": "2024-01-19T13:11:15.678Z",
+      "status": "Learned",
+      "id": 21,
+      "order": 17
+    },
+    {
+      "question": "Describe 'Prototype' in JavaScript.",
+      "answer": "Prototypes are the mechanism by which JavaScript objects inherit features from one another.",
+      "lastModified": "2024-01-20T14:21:26.789Z",
+      "status": "Want to Learn",
+      "id": 22,
+      "order": 18
+    },
+    {
+      "question": "What is a JavaScript arrow function?",
+      "answer": "An arrow function is a shorter syntax for a function expression in JavaScript and does not have its own 'this', 'arguments', 'super', or 'new.target'.",
+      "lastModified": "2024-01-21T08:35:27.891Z",
+      "status": "Noted",
+      "id": 23,
+      "order": 24
+    },
+    {
+      "question": "How does 'this' keyword work in JavaScript?",
+      "answer": "In JavaScript, 'this' refers to the object it belongs to. It has different values depending on where it is used.",
+      "lastModified": "2024-01-22T09:42:38.901Z",
+      "status": "Learned",
+      "id": 24,
+      "order": 25
+    },
+    {
+      "question": "What are JavaScript Promises?",
+      "answer": "A Promise in JavaScript is an object representing the eventual completion or failure of an asynchronous operation.",
+      "lastModified": "2024-01-23T10:50:49.012Z",
+      "status": "Want to Learn",
+      "id": 25,
+      "order": 26
+    },
+    {
+      "question": "Explain 'async' and 'await' in JavaScript.",
+      "answer": "'async' and 'await' are extensions of promises in JavaScript that simplify asynchronous operations. 'async' makes a function return a Promise, and 'await' waits for the Promise.",
+      "lastModified": "2024-01-24T11:55:50.123Z",
+      "status": "Noted",
+      "id": 26,
+      "order": 27
+    },
+    {
+      "question": "What are JavaScript Modules?",
+      "answer": "JavaScript modules are individual pieces of JavaScript code that can be reused in different parts of an application thanks to export and import statements.",
+      "lastModified": "2024-01-25T12:05:51.234Z",
+      "status": "Learned",
+      "id": 27,
+      "order": 28
+    },
+    {
+      "question": "What is the Event Loop in JavaScript?",
+      "answer": "The Event Loop in JavaScript is a mechanism that allows JavaScript to perform non-blocking operations, despite being single-threaded, by offloading operations to the system kernel whenever possible.",
+      "lastModified": "2024-01-26T13:10:52.345Z",
+      "status": "Want to Learn",
+      "id": 28,
+      "order": 29
     }
   ]
 }

@@ -28,32 +28,32 @@ function Contact() {
     };
   
     // Send the message data to the JSON server
-    fetch('http://localhost:3001/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(messageData),
-      })
-        .then((response) => {
-          if (response.status === 201) {
-            // Message sent successfully
-            setMessageSent(true);
-          } else if (response.status === 404) {
-            // Handle 404 error (Not Found)
-            console.error('Error: Not Found');
-          } else {
-            // Handle other errors
-            console.error('Error:', response.statusText);
-          }
-        })
-        .catch((error) => {
-          console.error('Network Error:', error);
-        });
+fetch('http://localhost:3001/messages', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(messageData),
+})
+  .then((response) => {
+    if (response.status === 201) {
+      // Message sent successfully
+      setMessageSent(true);
+    } else if (response.status === 404) {
+      // Handle 404 error (Not Found)
+      console.error('Error: Not Found');
+    } else {
+      // Handle other errors
+      console.error('Error:', response.statusText);
+    }
+  })
+  .catch((error) => {
+    console.error('Network Error:', error);
+  });
   };
 
   return (
-    <div>
+<div className="contact-form">
       {messageSent ? (
         <div>
           <h2>Message Sent</h2>
