@@ -3,6 +3,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import Contact from './Contact';
+
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -114,6 +116,8 @@ function App() {
 
   return (
     <div>
+            <Contact />
+
       <Header />
       <input
         type="text"
