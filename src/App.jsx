@@ -15,6 +15,7 @@ function App(){
     return (
         <div>
             <Header />
+            <CreateArea />
             {Questions.map(answering)}
             <Footer />
 
