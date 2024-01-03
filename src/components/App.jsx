@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import InfiniteScroll from 'react-infinite-scroll-component';
+
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
@@ -15,8 +15,6 @@ function App() {
   const [editNote, setEditNote] = useState(null);
   const [filter, setFilter] = useState("All");
   const [sortOption, setSortOption] = useState("LastModifiedDesc");
-  const [page, setPage] = useState(1); // Current page
-const [hasMore, setHasMore] = useState(true); // If there are more notes to load
   // Search Part
   const [searchTerm, setSearchTerm] = useState(""); 
 
@@ -32,14 +30,13 @@ const [hasMore, setHasMore] = useState(true); // If there are more notes to load
   });
 
   const fetchNotes = () => {
-    fetch(`http://localhost:3001/flashcards?page=${page}&limit=1`)
-      .then(response => response.json())
-      .then(data => {
-        console.log('Fetched data:', data); // Log the fetched data
-        setNotes(prevNotes => [...prevNotes, ...data]);
-        setHasMore(data.length > 0);
+    fetch('http://localhost:3001/flashcards')
+      .then((response) => response.json())
+      .then((data) => {
+        const orderedData = data.sort((a, b) => a.order - b.order);
+        setNotes(orderedData);
       })
-      .catch(error => console.error('Error:', error));
+      .catch((error) => console.error('Error:', error));
   };
   const onDragEnd = (result) => {
     console.log('Drag Ended', result);
@@ -198,6 +195,7 @@ const [hasMore, setHasMore] = useState(true); // If there are more notes to load
   };
   return (
     <div>
+      <Contact />
       <Header />
       <button onClick={shareNotes}>Share Selected Notes</button>
       <div className="search-filter-container">
@@ -224,47 +222,36 @@ const [hasMore, setHasMore] = useState(true); // If there are more notes to load
       </select>
       </div>
       <CreateArea onAdd={addOrUpdateNote} editNote={editNote} />
-
-<DragDropContext onDragEnd={onDragEnd}>
-  <Droppable droppableId="droppable-flashcards">
-    {(provided) => (
-      <InfiniteScroll
-        dataLength={notes.length}
-        next={() => setPage(prevPage => prevPage + 1)}
-        hasMore={hasMore}
-        loader={<h4>Loading...</h4>}
-        scrollableTarget="droppable-flashcards"
-      >
-        <div {...provided.droppableProps} ref={provided.innerRef}>
-          {notes.map((note, index) => (
-            <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
-              {(provided) => (
-                <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                  <Note
-                    id={note.id}
-                    title={note.question}
-                    content={note.answer}
-                    status={note.status}
-                    lastModified={note.lastModified}
-                    onEdit={editNoteHandler}
-                    onDelete={deleteNote}
-                    onSelectionToggle={() => handleNoteSelection(note.id)}
-                  />
-                </div>
-              )}
-            </Draggable>
-          ))}
-          {provided.placeholder}
-        </div>
-      </InfiniteScroll>
-    )}
-  </Droppable>
-</DragDropContext>
-<Contact />
-
-<Footer />
-</div>
-);
+      <DragDropContext onDragEnd={onDragEnd}>
+      <Droppable droppableId="droppable-flashcards">
+        {(provided) => (
+          <div {...provided.droppableProps} ref={provided.innerRef}>
+            {sortedAndFilteredNotes.map((note, index) => (
+              <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
+            {(provided) => (
+              <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                <Note
+                  id={note.id}
+                  title={note.question}
+                  content={note.answer}
+                        status={note.status}
+                        lastModified={note.lastModified}
+                        onEdit={editNoteHandler}
+                        onDelete={deleteNote}
+                        onSelectionToggle={() => handleNoteSelection(note.id)}
+                      />
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
