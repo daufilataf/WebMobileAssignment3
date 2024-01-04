@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import Header from "./Header";
+import Home from "./Home";
+
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
@@ -196,6 +198,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Home />
       <div className="search-filter-container">
 
       <input

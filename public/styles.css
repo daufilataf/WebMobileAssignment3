@@ -24,7 +24,95 @@ header h1, footer p {
   color: #fff;
 }
 
+.home {
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+}
 
+/* Style for the header section */
+.head {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Style for the personal information */
+.briefPersonal {
+  max-width: 600px;
+  text-align: center;
+}
+
+.briefPersonal h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.briefPersonal p {
+  font-size: 1em;
+  color: #777;
+}
+
+/* Style for the list of projects */
+.mainContent h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Style for each project container */
+.project-info {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+    
+}
+
+.project-info:hover {
+  transform: scale(1.05);
+}
+
+/* Style for project name */
+.project-name {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #555;
+}
+
+/* Style for project image */
+.project-info img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Style for project link */
+.project-info a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Style for project link on hover */
+.project-info a:hover {
+  text-decoration: underline;
+}
+
+/* Style for the project container */
+.proj-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .note {
   flex: 0 0 calc(33.333% - 16px); 
