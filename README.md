@@ -68,3 +68,61 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+Prerequisites
+Before running the application, ensure that you have the following prerequisites installed on your machine:
+
+Node.js
+npm
+JSON-Server
+
+Installation
+Clone the repository to your local machine:
+
+bash
+Copy code:
+git clone https://github.com/fuadfatali1/WebMobileAssignment3
+
+Navigate to the project directory:
+
+bash
+Copy code
+cd flashcard-application
+Install dependencies for the React app:
+
+bash
+Copy code
+npm install
+Install JSON-Server globally:
+
+bash
+Copy code
+npm install -g json-server
+Running the Application
+React App
+To start the React app, run the following command:
+
+bash
+Copy code
+npm start
+The app will be available at http://localhost:3000 in your web browser.
+
+JSON-Server
+To start JSON-Server, run the following command:
+
+bash
+Copy code
+json-server --watch db.json --port 3001  
+or npx json-server --watch db.json -p 3001
+This will start the JSON-Server and serve the flashcard data from db.json at http://localhost:3001.
+
+Usage
+Visit http://localhost:3000 in your web browser to access the Flashcard Application.
+Explore the application, create new cards, edit existing ones, and utilize the various features for effective flashcard management.
+GitHub Page:
+https://github.com/fuadfatali1/WebMobileAssignment3
+For additional information and updates, visit the GitHub page.
+
