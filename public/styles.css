@@ -11,7 +11,7 @@ html {
 body {
   background: #eee;
   padding: 0 16px;
-  margin-bottom: 2.5rem; /* Space for footer */
+  margin-bottom: 2.5rem; 
 }
 
 header, footer {
@@ -27,15 +27,13 @@ header h1, footer p {
 
 
 .note {
-  flex: 0 0 calc(33.333% - 16px); /* Adjust for 3 items per row, accounting for the gap */
+  flex: 0 0 calc(33.333% - 16px); 
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
   margin: 10px;
-  perspective: 1000px; /* Required for 3D effects */
-
-  /* Ensure the height of notes are equal if needed */
+  perspective: 1000px; 
 }
 
 .note h1 {
@@ -52,9 +50,9 @@ header h1, footer p {
 
 .note-footer {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: flex-start; /* Align items to the start of the container */
-  gap: 5px; /* Space between elements */
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 5px;
 }
 
 .note-footer button {
@@ -181,21 +179,21 @@ form.create-note button {
 }
 
 .share-notes-button {
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text */
-  padding: 15px 32px; /* Padding around the text */
-  text-align: center; /* Center the text inside the button */
-  text-decoration: none; /* Remove underline from text */
-  display: inline-block; /* Allow setting width and height */
-  font-size: 16px; /* Text size */
-  margin: 4px 2px; /* Margin around the button */
-  cursor: pointer; /* Change mouse cursor to pointer */
-  border: none; /* Remove border */
-  border-radius: 8px; /* Rounded corners */
-  transition-duration: 0.4s; /* Animation duration */
+  background-color: #4CAF50; 
+  color: white;
+  padding: 15px 32px; 
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block;
+  font-size: 16px; 
+  margin: 4px 2px; 
+  cursor: pointer; 
+  border: none; 
+  border-radius: 8px; 
+  transition-duration: 0.4s; 
 }
 
 .share-notes-button:hover {
-  background-color: #45a049; /* Darker shade of green */
+  background-color: #45a049;
   color: white;
 }
