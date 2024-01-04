@@ -120,8 +120,9 @@ header h1, footer p {
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
-  margin: 10px;
+  margin: 30px;
   perspective: 1000px; 
+  height: 200px;
 }
 
 .note h1 {

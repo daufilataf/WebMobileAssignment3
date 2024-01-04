@@ -181,14 +181,6 @@
       "order": 21
     },
     {
-      "question": "What are JavaScript Promises?",
-      "answer": "A Promise in JavaScript is an object representing the eventual completion or failure of an asynchronous operation.",
-      "lastModified": "2024-01-23T10:50:49.012Z",
-      "status": "Want to Learn",
-      "id": 25,
-      "order": 22
-    },
-    {
       "question": "Explain 'async' and 'await' in JavaScript.",
       "answer": "'async' and 'await' are extensions of promises in JavaScript that simplify asynchronous operations. 'async' makes a function return a Promise, and 'await' waits for the Promise.",
       "lastModified": "2024-01-24T11:55:50.123Z",
