@@ -13,8 +13,8 @@ function CreateArea(props) {
   useEffect(() => {
     if (props.editNote) {
       setNote({
-        title: props.editNote.question, // Make sure these keys match
-        content: props.editNote.answer   // the structure of your note
+        title: props.editNote.question, 
+        content: props.editNote.answer   
       });
       setExpanded(true);
     }
@@ -50,19 +50,19 @@ function CreateArea(props) {
   return (
     <div>
       <form className="create-note">
-        <input
+        <textarea
           onClick={expand}
           name="title"
           onChange={handleChange}
           value={note.title}
-          placeholder="Title"
+          placeholder="Question"
         />
         {isExpanded && (
           <textarea
             name="content"
             onChange={handleChange}
             value={note.content}
-            placeholder="Take a note..."
+            placeholder="Answer"
             rows={isExpanded ? 3 : 1}
           />
 

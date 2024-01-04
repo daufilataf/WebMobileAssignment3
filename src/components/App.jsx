@@ -229,21 +229,21 @@ function App() {
           <div {...provided.droppableProps} ref={provided.innerRef}>
             {sortedAndFilteredNotes.map((note, index) => (
               <Draggable key={note.id} draggableId={note.id.toString()} index={index}>
-            {(provided) => (
-              <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                <Note
-                  id={note.id}
-                  title={note.question}
-                  content={note.answer}
-                        status={note.status}
-                        lastModified={note.lastModified}
-                        onEdit={editNoteHandler}
-                        onDelete={deleteNote}
-                        onSelectionToggle={() => handleNoteSelection(note.id)}
-                      />
-                    </div>
-                  )}
-                </Draggable>
+              {(provided) => (
+                <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                  <Note
+                    id={note.id}
+                    title={note.question} // Display answer as the title
+                    content={note.answer} // Display question as the content
+                    status={note.status}
+                    lastModified={note.lastModified}
+                    onEdit={editNoteHandler}
+                    onDelete={deleteNote}
+                    onSelectionToggle={() => handleNoteSelection(note.id)}
+                  />
+                </div>
+              )}
+            </Draggable>
               ))}
               {provided.placeholder}
             </div>

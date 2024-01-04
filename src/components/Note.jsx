@@ -31,30 +31,28 @@ function Note(props) {
   }
 
   const formattedDate = formatDate(props.lastModified); // Format the lastModified date
+
   return (
-    <div  className={`note ${isFlipped ? 'note-flipped' : ''}`}>
+    <div className={`note ${isFlipped ? 'note-flipped' : ''}`}>
       <div className="note-inner">
         <div className="note-front">
           {/* Front side of the note */}
           <input type="checkbox" onChange={() => props.onSelectionToggle(props.id)} />
-          <div  onClick={handleCardClick}>
-            <h1 >{props.title}</h1>
+          <div onClick={handleCardClick}>
+            {isAnswerVisible ? <p>{props.content}</p> : <h1>{props.title}</h1>}
           </div>
           <div onClick={handleCardClick} className="note-footer">
             <p>Status: {props.status}</p>
-            <p>Last Modified: {formatDate(props.lastModified)}</p>
-            </div>
-            <div>
-              <button onClick={handleEdit}>
-                <i className="fas fa-edit"></i>
-              </button>
-              <button onClick={handleDelete}>
-                <i className="fas fa-trash-alt"></i>
-              </button>
-            </div>
-        </div>
-        <div className="note-back">
-          {isAnswerVisible && <p>{props.content}</p>}
+            <p>Last Modified: {formattedDate}</p>
+          </div>
+          <div>
+            <button onClick={handleEdit}>
+              <i className="fas fa-edit"></i>
+            </button>
+            <button onClick={handleDelete}>
+              <i className="fas fa-trash-alt"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>

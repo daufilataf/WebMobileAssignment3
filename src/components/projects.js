@@ -6,7 +6,7 @@ const projects = [
     id: 1,
     name: "Web Site",
     img: luna,
-    link: "https://github.com/fuadfatali1/WebAndMobile_Assignment1",
+    link: "https://fuadfatali1.github.io/WebAndMobile_Assignment1/",
   },
   {
     id: 2,
