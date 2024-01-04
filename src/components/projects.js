@@ -1,23 +1,23 @@
-import luna from "./portfolio.png";
-import portf from "./api.png";
-import dumm from "./flashcard.png";
+import portfolio from "./portfolio.png";
+import api from "./api.png";
+import web3 from "./flashcard.png";
 const projects = [
   {
     id: 1,
     name: "Web Site",
-    img: luna,
+    img: portfolio,
     link: "https://fuadfatali1.github.io/WebAndMobile_Assignment1/",
   },
   {
     id: 2,
     name: "API",
-    img: portf,
+    img: api,
     link: "https://github.com/fuadfatali1/Assignment2",
   },
   {
     id: 3,
     name: "FlashCard",
-    img: dumm,
+    img: web3,
     link: "https://github.com/fuadfatali1/WebMobileAssignment3",
   },
 ];

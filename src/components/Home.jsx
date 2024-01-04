@@ -6,7 +6,7 @@ function Project(props) {
       <img src={props.img} alt="img" width="300px" height="300px" />
       <h3 className="project-name">{props.name}</h3>
       
-        Link to Webpage
+        Link
       </a>
     </div>
   );
@@ -16,13 +16,13 @@ export default function Home() {
   return (
     <div className="home">
       <div className="head">
-        <div className="briefPersonal">
+        <div className="personal">
           
           <h1><a href="https://github.com/fuadfatali1" target="_blank">Fuad Fataliyev</a></h1>
           <p>Senior Computer Science Student</p>
         </div>
       </div>
-      <div className="mainContent">
+      <div className="contentPage">
         <h1>List of Projects:</h1>
         <div className="proj-container">
           {projects.map((proj) => {
