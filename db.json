@@ -17,6 +17,12 @@
       "email": "fuad0fataliyev0@outlook.com",
       "content": "erfefewgrrw",
       "id": 3
+    },
+    {
+      "subject": "Quiz Grades",
+      "email": "fuad0fataliyev0@gmail.com",
+      "content": "I can not see my grades",
+      "id": 4
     }
   ],
   "flashcards": [
@@ -26,7 +32,7 @@
       "lastModified": "2024-01-03T16:48:15.951Z",
       "status": "Want to Learn",
       "id": 6,
-      "order": 4
+      "order": 1
     },
     {
       "question": "What are the three states of a Promise in JavaScript?",
@@ -34,7 +40,7 @@
       "lastModified": "2024-01-03T16:49:02.951Z",
       "status": "Want to Learn",
       "id": 7,
-      "order": 5
+      "order": 2
     },
     {
       "question": "How do you handle a fulfilled Promise in JavaScript?",
@@ -42,7 +48,7 @@
       "lastModified": "2024-01-03T16:50:08.951Z",
       "status": "Want to Learn",
       "id": 8,
-      "order": 6
+      "order": 3
     },
     {
       "question": "What is Promise chaining in JavaScript?",
@@ -50,7 +56,7 @@
       "lastModified": "2024-01-03T16:51:20.951Z",
       "status": "Want to Learn",
       "id": 9,
-      "order": 7
+      "order": 4
     },
     {
       "question": "What is the purpose of the 'catch' method in JavaScript Promises?",
@@ -58,7 +64,7 @@
       "lastModified": "2024-01-03T16:52:35.951Z",
       "status": "Want to Learn",
       "id": 10,
-      "order": 8
+      "order": 5
     },
     {
       "question": "How do you create a Promise that immediately resolves with a value?",
@@ -66,7 +72,7 @@
       "lastModified": "2024-01-03T16:53:50.951Z",
       "status": "Want to Learn",
       "id": 11,
-      "order": 9
+      "order": 6
     },
     {
       "question": "What is the purpose of the 'Promise.all()' method in JavaScript?",
@@ -74,7 +80,7 @@
       "lastModified": "2024-01-03T16:55:03.951Z",
       "status": "Want to Learn",
       "id": 12,
-      "order": 10
+      "order": 7
     },
     {
       "question": "What is the difference between Promises and callbacks in JavaScript?",
@@ -82,7 +88,7 @@
       "lastModified": "2024-01-03T16:56:17.951Z",
       "status": "Want to Learn",
       "id": 13,
-      "order": 11
+      "order": 8
     },
     {
       "question": "Can a Promise be both fulfilled and rejected?",
@@ -90,15 +96,7 @@
       "lastModified": "2024-01-03T16:57:28.951Z",
       "status": "Want to Learn",
       "id": 14,
-      "order": 12
-    },
-    {
-      "question": "What is the purpose of the 'Promise.race()' method in JavaScript?",
-      "answer": "The 'Promise.race()' method is used to wait for the first Promise in an iterable to either fulfill or reject, and it returns a new Promise that mirrors the state of the first settled Promise.",
-      "lastModified": "2024-01-03T16:58:41.951Z",
-      "status": "Want to Learn",
-      "id": 15,
-      "order": 13
+      "order": 9
     },
     {
       "question": "What is the 'async/await' syntax in JavaScript, and how does it relate to Promises?",
@@ -106,7 +104,7 @@
       "lastModified": "2024-01-03T16:59:55.951Z",
       "status": "Want to Learn",
       "id": 16,
-      "order": 14
+      "order": 11
     },
     {
       "question": "How can you handle errors in 'async/await' code in JavaScript?",
@@ -114,7 +112,7 @@
       "lastModified": "2024-01-03T17:01:07.951Z",
       "status": "Want to Learn",
       "id": 17,
-      "order": 15
+      "order": 12
     },
     {
       "question": "What is the purpose of the 'finally' block in 'async/await' code?",
@@ -122,7 +120,7 @@
       "lastModified": "2024-01-03T17:02:20.951Z",
       "status": "Want to Learn",
       "id": 18,
-      "order": 16
+      "order": 13
     },
     {
       "question": "How can you convert a callback-based function to return a Promise in JavaScript?",
@@ -130,7 +128,7 @@
       "lastModified": "2024-01-03T17:03:34.951Z",
       "status": "Want to Learn",
       "id": 19,
-      "order": 17
+      "order": 14
     },
     {
       "question": "What is the difference between 'Promise.resolve()' and 'Promise.reject()' in JavaScript?",
@@ -138,7 +136,7 @@
       "lastModified": "2024-01-03T17:04:48.951Z",
       "status": "Want to Learn",
       "id": 20,
-      "order": 18
+      "order": 15
     },
     {
       "question": "Can you nest Promises inside 'then' or 'catch' handlers in JavaScript?",
@@ -146,7 +144,7 @@
       "lastModified": "2024-01-03T17:06:01.951Z",
       "status": "Want to Learn",
       "id": 21,
-      "order": 19
+      "order": 16
     },
     {
       "question": "What is Promise rejection handling in JavaScript?",
@@ -154,7 +152,7 @@
       "lastModified": "2024-01-03T17:07:13.951Z",
       "status": "Want to Learn",
       "id": 22,
-      "order": 20
+      "order": 17
     },
     {
       "question": "How can you chain multiple Promises using 'async/await' in JavaScript?",
@@ -162,7 +160,7 @@
       "lastModified": "2024-01-03T17:08:26.951Z",
       "status": "Want to Learn",
       "id": 23,
-      "order": 21
+      "order": 18
     },
     {
       "question": "What are some common use cases for Promises in JavaScript?",
@@ -170,7 +168,7 @@
       "lastModified": "2024-01-03T17:09:38.951Z",
       "status": "Want to Learn",
       "id": 24,
-      "order": 22
+      "order": 19
     },
     {
       "question": "What happens if you don't handle errors in a Promise in JavaScript?",
@@ -178,15 +176,14 @@
       "lastModified": "2024-01-03T17:10:50.951Z",
       "status": "Want to Learn",
       "id": 25,
-      "order": 23
+      "order": 20
     },
     {
       "question": "What is the purpose of the 'Promise.prototype.finally()' method in JavaScript?",
       "answer": "The 'Promise.prototype.finally()' method is used to specify a callback function that is executed when a Promise is settled, whether it is fulfilled or rejected. It allows you to perform cleanup tasks.",
-      "lastModified": "2024-01-03T17:12:03.951Z",
-      "status": "Want to Learn",
-      "id": 26,
-      "order": 24
+      "lastModified": "2024-01-04T06:41:51.306Z",
+      "status": "Noted",
+      "id": 26
     },
     {
       "question": "How do you handle multiple Promises concurrently in JavaScript?",
@@ -201,21 +198,24 @@
       "answer": "IDK",
       "lastModified": "2024-01-04T06:04:55.419Z",
       "status": "Noted",
-      "id": 28
+      "id": 28,
+      "order": 22
     },
     {
       "question": "Do you know How you will solve global problems?",
       "answer": "No",
       "lastModified": "2024-01-04T06:05:41.098Z",
       "status": "Noted",
-      "id": 29
+      "id": 29,
+      "order": 23
     },
     {
       "question": "What is the purpose of the 'Promise.all()' method in JavaScript?",
       "answer": "The 'Promise.all()' method is used to wait for all the Promises in an iterable to resolve and returns a new Promise that resolves to an array of the resolved values.",
       "lastModified": "2024-01-04T06:07:07.767Z",
       "status": "Noted",
-      "id": 30
+      "id": 30,
+      "order": 24
     }
   ]
 }

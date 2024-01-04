@@ -3,6 +3,44 @@
   margin: 0;
   box-sizing: border-box;
 }
+nav {
+  background-color: #333; /* Dark background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none; /* Remove default list styling */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline; /* Display list items in a row */
+  margin: 0 20px; /* Spacing between menu items */
+}
+
+nav a {
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 18px; /* Increase font size */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+  color: #4CAF50; /* Change color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  nav ul li {
+    display: block; /* Stack list items vertically */
+    margin: 10px 0; /* Adjust spacing */
+  }
+}
+
 
 html {
   font-family: "Montserrat", sans-serif;

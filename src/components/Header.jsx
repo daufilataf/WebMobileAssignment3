@@ -4,7 +4,7 @@ function Header() {
   return (
     <header>
       <h1>
-        FlashCard
+        Cards
       </h1>
     </header>
   );
