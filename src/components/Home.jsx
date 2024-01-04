@@ -6,7 +6,7 @@ function Project(props) {
       <img src={props.img} alt="img" width="300px" height="300px" />
       <h3 className="project-name">{props.name}</h3>
       
-        Link
+        Explore
       </a>
     </div>
   );
